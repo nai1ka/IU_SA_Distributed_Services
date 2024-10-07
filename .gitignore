@@ -1,1 +1,5 @@
 .venv
+__pycache__
+feed_service/__pycache__
+message_service/__pycache__
+user_service/__pycache__
