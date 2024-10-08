@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
-from models import db, User
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from models import db, User
 
 app = Flask(__name__)
 app.config.from_object('config.Config')

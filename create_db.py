@@ -1,3 +1,4 @@
+import time
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -29,5 +30,9 @@ class Like(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
 
+
+ 
 with app.app_context():
+    db.drop_all()
+    time.sleep(3)
     db.create_all()

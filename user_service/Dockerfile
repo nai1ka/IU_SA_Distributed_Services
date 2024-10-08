@@ -7,6 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY user_service /app/user_service
 COPY config.py /app/config.py
+COPY models.py /app/models.py
 
 WORKDIR /app/user_service
 
