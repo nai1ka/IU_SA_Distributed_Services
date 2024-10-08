@@ -11,6 +11,8 @@ Team 24:
 
 ## System Desctiption
 
+<a href="https://drive.google.com/uc?export=view&id=<FILEID>"><img src="https://drive.google.com/uc?export=view&id=1boY0wn0ZUHPNs7Q-U--jwBelMK2HlOuL" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+
 Our system has a service-based architecture style. It consists of a user interface, one database and 3 services that do not contact each other and that are splitted based on business requirements.
 
 **User Service:**
