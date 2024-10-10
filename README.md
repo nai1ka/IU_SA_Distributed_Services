@@ -9,7 +9,7 @@ Team 24:
 - Dmitriy Okoneshnikov ([d.okoneshnikov@innopolis.university](mailto:d.okoneshnikov@innopolis.university))
 - Vladislav Bolshakov ([v.bolshakov@innopolis.university](mailto:v.bolshakov@innopolis.university))
 
-## System Desctiption
+## System Description
 
 <a href="https://drive.google.com/uc?export=view&id=<FILEID>"><img src="https://drive.google.com/uc?export=view&id=1boY0wn0ZUHPNs7Q-U--jwBelMK2HlOuL" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
@@ -80,3 +80,29 @@ Takes a JSON object with the following fields:
 ```
 
 If the user has already liked the message, the like will be removed.
+
+## Project Structure
+```
+.
+├── README.md  # file you are reading right now :)
+├── config.py  # configs for flask
+├── create_db.py  # script for initializing postgres
+├── docker-compose.yml  # for orchestrating all the services and the database
+├── feed_service
+│   ├── Dockerfile
+│   ├── __init__.py
+│   └── app.py  # flask app for the feed service
+├── message_service
+│   ├── Dockerfile
+│   ├── __init__.py
+│   └── app.py  # flask app for the message service
+├── models.py  # postgres models
+├── requirements.txt  # python libraries used
+├── user_interface
+│   ├── __init__.py
+│   └── cli.py  # command line interface
+└── user_service
+    ├── Dockerfile
+    ├── __init__.py
+    └── app.py  # flask app for the user service
+```
