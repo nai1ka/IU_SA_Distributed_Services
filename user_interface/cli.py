@@ -75,7 +75,7 @@ def feed(session: requests.Session):
         response.raise_for_status()
         for msg in response.json():
             print(
-                f"[UserID={msg['user_id']}, MessageID={msg['message_id']}, "
+                f"[Username={msg['username']}, MessageID={msg['message_id']}, "
                 f"Likes={msg['num_of_likes']}] {msg['content']}"
             )
     except requests.exceptions.ConnectionError:
