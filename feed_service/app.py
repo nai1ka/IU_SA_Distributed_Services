@@ -4,7 +4,7 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from models import db, Message
+from models import User, db, Message
 from models import Like
 
 app = Flask(__name__)
@@ -19,9 +19,12 @@ def get_feed():
     messages = Message.query.order_by(Message.created_at.desc()).limit(10).all()
     for message in messages:
         num_of_likes = Like.query.filter_by(message_id=message.id).count()
+        user_id = message.user_id
+        user = User.query.filter_by(id=user_id).first()
+        username = user.username
         res.append(
             {
-                "user_id": message.user_id,
+                "username": username,
                 "content": message.content,
                 "created_at": message.created_at,
                 "message_id": message.id,
