@@ -8,6 +8,7 @@ Team 24:
 - Nail Minnemullin ([n.minnemullin@innopolis.university](mailto:n.minnemullin@innopolis.university))
 - Dmitriy Okoneshnikov ([d.okoneshnikov@innopolis.university](mailto:d.okoneshnikov@innopolis.university))
 - Vladislav Bolshakov ([v.bolshakov@innopolis.university](mailto:v.bolshakov@innopolis.university))
+
 ## System Desctiption
 
 <a href="https://drive.google.com/uc?export=view&id=<FILEID>"><img src="https://drive.google.com/uc?export=view&id=1boY0wn0ZUHPNs7Q-U--jwBelMK2HlOuL" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
@@ -28,7 +29,7 @@ Our system has a service-based architecture style. It consists of a user interfa
 
 ## Separation by Services
 
-We decided to split the whole system by these 3 services due to business requirements and logic of future possible scaling. 
+We decided to split the whole system by these 3 services due to business requirements and logic of future possible scaling.
 
 **User Service** covers a business requirement about users ability to register new accounts and post messages only if they are registered. With the growth of users number, this service can be scaled by creating new workers responsible for simultaneous registration of users and login processes.
 
@@ -39,7 +40,9 @@ We decided to split the whole system by these 3 services due to business require
 ## Endpoints
 
 `POST /users/register` - register a new user
+
 Takes a JSON object with the following fields:
+
 ```json
 {
     "username" : "johndoe"
@@ -53,6 +56,7 @@ Takes a JSON object with the following fields:
 ----
 
 `POST /messages` - send a message
+
 Takes a JSON object with the following fields:
 
 ```json
@@ -65,6 +69,7 @@ Takes a JSON object with the following fields:
 ----
 
 `POST /messages/<int:id>/like` - like a message
+
 Takes a JSON object with the following fields:
 
 ```json
